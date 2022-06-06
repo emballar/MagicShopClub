@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import TourInfo, Meetup, Member
 from .forms import MeetupForm, MemberForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -30,6 +31,7 @@ def memberdetail(request, id):
     member = get_object_or_404(Member, pk = id)
     return render(request, 'club/memberdetail.html', {'member' : member})
 
+@login_required
 def newMeetup(request):
     form= MeetupForm
 
@@ -45,6 +47,7 @@ def newMeetup(request):
     
     return render(request, 'club/newmeetup.html', {'form' : form})
 
+@login_required
 def newMember(request):
     form= MemberForm
 
@@ -59,3 +62,10 @@ def newMember(request):
         form=MemberForm()
     
     return render(request, 'club/newmember.html', {'form' : form})
+
+
+def loginmessage(request):
+    return render(request, 'club/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'club/logoutmessage.html')
