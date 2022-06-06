@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Meetups</h2>
+<ul>
+    {% for m in meetup_list %}
+        <li>{{ m.title }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
