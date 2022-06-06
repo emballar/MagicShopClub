@@ -3,7 +3,7 @@
 <h2>Meetups</h2>
 <ul>
     {% for m in meetup_list %}
-        <li>{{ m.title }}</li>
+        <li><a href="{% url 'meetupdetail' id=m.id %}">{{ m.title }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}

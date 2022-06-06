@@ -3,7 +3,7 @@
 <h2>Tour Info</h2>
 <ul>
     {% for t in tour_list %}
-        <li>{{ t.location }}</li>
+        <li><a href="{% url 'tourdetail' id=t.id %}"> {{ t.location }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}

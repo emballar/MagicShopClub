@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2> Meetup Details </h2>
+<p> Event Name : {{meetup.title}}<br/>
+Date : {{meetup.date}}<br/>
+Location : {{meetup.location}}<br/>
+Time : {{meetup.time}}<br/>
+Description : {{meetup.description}}<br/>
+Hosted By : {{meetup.user}}<br/>
+</p>
+{% endblock %}
