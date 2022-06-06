@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>ARMY Members</h2>
+<ul>
+    {% for m in member_list %}
+        <li><a href="{% url 'memberdetail' id=m.id %}">{{ m.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
