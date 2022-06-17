@@ -1,8 +1,9 @@
 from django.test import TestCase
 from .models import TourInfo, Meetup, Member
 from django.contrib.auth.models import User
-from .forms import MemberForm
+from .forms import MeetupForm, MemberForm
 from django.urls import reverse_lazy, reverse
+import datetime
 
 class TourTest(TestCase):
     def setUp(self):
@@ -13,6 +14,19 @@ class TourTest(TestCase):
 
     def test_tablename(self):
         self.assertEqual(str(TourInfo._meta.db_table), 'tourinfo')
+
+class MeetupFormTest(TestCase):
+    def test_meetupform(self):
+        data={
+            'title':'Networking Event',
+            'date' : datetime.date(2022,9,31),
+            'location':'Amazon Spheres',
+            'time' : '10 AM',
+            'description' : 'ARMY networking event',
+            'user' : 'namjoon'
+            }
+        form=MeetupForm(data)
+        self.assertTrue(form.is_valid)
 
 class MemberFormTest(TestCase):
     def test_memberform(self):
