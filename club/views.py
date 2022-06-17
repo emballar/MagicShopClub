@@ -69,3 +69,6 @@ def loginmessage(request):
 
 def logoutmessage(request):
     return render(request, 'club/logoutmessage.html')
+
+def twitter(request):
+    return render(request, 'club/twitter.html', {'twitter' : twitter})

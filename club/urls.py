@@ -13,4 +13,5 @@ urlpatterns = [
     path('newmember/', views.newMember, name='newmember'),
     path('loginmesssage/', views.loginmessage, name='loginmessage'),
     path('logoutmesssage/', views.logoutmessage, name='logoutmessage'),
+    path('twitter/', views.twitter, name='twitter')
 ]
